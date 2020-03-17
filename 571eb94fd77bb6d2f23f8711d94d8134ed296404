@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97092000_90aa78d9",
+        "filename": "Dockerfile",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-17T18:17:48Z",
+      "side": 1,
+      "message": "Does qp-driver use sdl?  I don\u0027t see any invocation of gcc below, does it get called by the pip install?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 2
+      },
+      "revId": "571eb94fd77bb6d2f23f8711d94d8134ed296404",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abb9de5c_ebc81265",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-03-17T18:17:48Z",
+      "side": 1,
+      "message": "is there an easy way to slurp this from container-tag.yaml so the version string is not duplicated?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 3
+      },
+      "revId": "571eb94fd77bb6d2f23f8711d94d8134ed296404",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
