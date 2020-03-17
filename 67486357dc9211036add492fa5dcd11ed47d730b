@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d29ebba3_327718a4",
+        "filename": "qpdriver/main.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2020-03-17T15:42:41Z",
+      "side": 1,
+      "message": "I thought Nokia was not wanting to be associated with any actual xAPPs.  Frameworks are different, but I think Nokia references need to be removed.",
+      "revId": "67486357dc9211036add492fa5dcd11ed47d730b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
