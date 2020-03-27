@@ -32,6 +32,9 @@ RMR Messages
 """
 
 
+rmr_xapp = None
+
+
 def post_init(self):
     self.def_hand_called = 0
     self.traffic_steering_requests = 0
@@ -57,12 +60,14 @@ def steering_req_handler(self, summary, sbuf):
     self.rmr_free(sbuf)
 
 
-# obv some of these flags have to change
-rmr_xapp = RMRXapp(default_handler, post_init=post_init, rmr_port=4562, use_fake_sdl=True)
-rmr_xapp.register_callback(steering_req_handler, 30000)
-
-
-def start(thread=False):
+def start(thread=False, use_fake_sdl=False):
+    """
+    this is a convienence function that allows this xapp to run in Docker for "real" (no thread, real SDL)
+    but also easily modified for unit testing (e.g., use_fake_sdl)
+    """
+    global rmr_xapp
+    rmr_xapp = RMRXapp(default_handler, post_init=post_init, rmr_port=4562, use_fake_sdl=use_fake_sdl)
+    rmr_xapp.register_callback(steering_req_handler, 30000)
     rmr_xapp.run(thread)
 
 
