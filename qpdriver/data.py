@@ -16,6 +16,7 @@ qpdriver module responsible for SDL queries and data merging
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 # ==================================================================================
+from qpdriver.exceptions import UENotFound
 
 # namespaces
 UE_NS = "TS-UE-metrics"
@@ -61,7 +62,9 @@ def form_qp_pred_req(xapp_ref, ueid):
     Note that a single request to qp driver may have many UEs in a list, however since a new message needs to be sent for each one,
     the calling function iterates over that list, rather than doing it here.
     """
-    ue_data = xapp_ref.sdl_get(UE_NS, str(ueid), usemsgpack=False)
+    ue_data = xapp_ref.sdl_get(UE_NS, ueid, usemsgpack=False)
+    if not ue_data:
+        raise UENotFound()
 
     serving_cid = ue_data["ServingCellID"]
 
@@ -82,18 +85,22 @@ def form_qp_pred_req(xapp_ref, ueid):
 
     # form the CellMeasurements
     for cid in cell_ids:
+
         cellm = xapp_ref.sdl_get(CELL_NS, cid, usemsgpack=False)
-        # if we were really under performance strain here we could delete from the orig instead of copying but this code is far simpler
-        cell_data = {k: cellm[k] for k in CELL_KEY_LIST}
 
-        # these keys get dropped into *each* cell
-        cell_data["MeasTimestampRF"] = ue_data["MeasTimestampRF"]
-        cell_data["MeasPeriodRF"] = ue_data["MeasPeriodRF"]
+        if cellm:  # if cellm is None, then we omit that cell from this array
 
-        # add the RF
-        cell_data["RFMeasurements"] = ue_data["ServingCellRF"] if cid == serving_cid else n_cell_info[cid]
+            # if we were really under performance strain here we could delete from the orig instead of copying but this code is far simpler
+            cell_data = {k: cellm[k] for k in CELL_KEY_LIST}
 
-        # add to our array
-        qp_pred_req["CellMeasurements"].append(cell_data)
+            # these keys get dropped into *each* cell
+            cell_data["MeasTimestampRF"] = ue_data["MeasTimestampRF"]
+            cell_data["MeasPeriodRF"] = ue_data["MeasPeriodRF"]
+
+            # add the RF
+            cell_data["RFMeasurements"] = ue_data["ServingCellRF"] if cid == serving_cid else n_cell_info[cid]
+
+            # add to our array
+            qp_pred_req["CellMeasurements"].append(cell_data)
 
     return qp_pred_req
