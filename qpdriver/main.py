@@ -16,6 +16,7 @@ qpdriver entrypoint module
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 # ==================================================================================
+import json
 from ricxappframe.xapp_frame import RMRXapp
 
 """
@@ -50,8 +51,15 @@ def steering_req_handler(self, summary, sbuf):
         {“UEPredictionSet” : [“UEId1”,”UEId2”,”UEId3”]}
     """
     self.traffic_steering_requests += 1
-    print(summary)
+    ue_list = None
+    try:
+        req = json.loads(summary["payload"])  # input should be a json encoded as bytes
+        ue_list = req["UEPredictionSet"]
+    except (json.decoder.JSONDecodeError, KeyError):
+        self.logger.debug("Received a TS Request but it was malformed!")
     self.rmr_free(sbuf)
+
+    print(ue_list)
 
 
 def start(thread=False, use_fake_sdl=False):

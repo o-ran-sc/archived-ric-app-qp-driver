@@ -61,9 +61,17 @@ def test_rmr_flow(monkeypatch, ue_metrics, cell_metrics_1, cell_metrics_2, cell_
     # define a test sender
     def entry(self):
 
-        val = json.dumps({"test send 30000": 1}).encode()
+        # make sure a bad steering request doesn't blow up in qpd
+        val = "notevenjson".encode()
+        self.rmr_send(val, 30000)
+        val = json.dumps({"bad": "tothebone"}).encode()  # json but missing UEPredictionSet
         self.rmr_send(val, 30000)
 
+        # good traffic steering request
+        val = json.dumps({"UEPredictionSet": ["12345"]}).encode()
+        self.rmr_send(val, 30000)
+
+        # should trigger the default handler and do nothing
         val = json.dumps({"test send 60001": 2}).encode()
         self.rmr_send(val, 60001)
 
@@ -73,7 +81,7 @@ def test_rmr_flow(monkeypatch, ue_metrics, cell_metrics_1, cell_metrics_2, cell_
 
     time.sleep(1)
 
-    assert main.get_stats() == {"DefCalled": 1, "SteeringRequests": 1}
+    assert main.get_stats() == {"DefCalled": 1, "SteeringRequests": 3}
 
 
 def teardown_module():
