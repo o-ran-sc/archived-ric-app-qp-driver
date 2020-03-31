@@ -1,5 +1,8 @@
+"""
+custom logic exceptions
+"""
 # ==================================================================================
-#       Copyright (c) 2018-2020 AT&T Intellectual Property.
+#       Copyright (c) 2020 AT&T Intellectual Property.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -13,22 +16,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 # ==================================================================================
-FROM python:3.8-alpine
 
-# RMR setup
-RUN mkdir -p /opt/route/
-COPY --from=nexus3.o-ran-sc.org:10004/bldr-alpine3-go:5-a3.11-nng-rmr3 /usr/local/lib64/librmr_si.so /usr/local/lib64/librmr_si.so
-ENV LD_LIBRARY_PATH /usr/local/lib/:/usr/local/lib64
 
-# sdl needs gcc
-RUN apk update && apk add gcc musl-dev
-
-# Install
-COPY setup.py /tmp
-COPY LICENSE.txt /tmp/
-COPY qpdriver/ /tmp/qpdriver
-RUN pip install /tmp
-
-# Run
-ENV PYTHONUNBUFFERED 1
-CMD start.py
+class UENotFound(BaseException):
+    pass

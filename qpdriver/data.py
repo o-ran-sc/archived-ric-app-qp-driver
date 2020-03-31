@@ -16,6 +16,7 @@ qpdriver module responsible for SDL queries and data merging
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 # ==================================================================================
+from qpdriver.exceptions import UENotFound
 
 # namespaces
 UE_NS = "TS-UE-metrics"
@@ -61,7 +62,9 @@ def form_qp_pred_req(xapp_ref, ueid):
     Note that a single request to qp driver may have many UEs in a list, however since a new message needs to be sent for each one,
     the calling function iterates over that list, rather than doing it here.
     """
-    ue_data = xapp_ref.sdl_get(UE_NS, str(ueid), usemsgpack=False)
+    ue_data = xapp_ref.sdl_get(UE_NS, ueid, usemsgpack=False)
+    if not ue_data:
+        raise UENotFound()
 
     serving_cid = ue_data["ServingCellID"]
 
@@ -82,6 +85,9 @@ def form_qp_pred_req(xapp_ref, ueid):
 
     # form the CellMeasurements
     for cid in cell_ids:
+
+        # TODO! Warning, we must handle the case where the cell ID does not exist
+
         cellm = xapp_ref.sdl_get(CELL_NS, cid, usemsgpack=False)
         # if we were really under performance strain here we could delete from the orig instead of copying but this code is far simpler
         cell_data = {k: cellm[k] for k in CELL_KEY_LIST}

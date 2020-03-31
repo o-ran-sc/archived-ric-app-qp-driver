@@ -14,6 +14,13 @@ and this project adheres to `Semantic Versioning <http://semver.org/>`__.
    :depth: 3
    :local:
 
+[0.3.0] - 3/31/2020
+-------------------
+::
+
+    * Fix UE IDs to be strings as they are in the req slides
+
+
 [0.2.0] - 3/27/2020
 -------------------
 ::

@@ -4,7 +4,7 @@ import pytest
 @pytest.fixture
 def ue_metrics():
     return {
-        "UEID": 12345,
+        "UEID": "12345",
         "ServingCellID": "310-680-200-555002",
         "MeasTimestampUEPDCPBytes": "2020-03-18 02:23:18.220",
         "MeasPeriodUEPDCPBytes": 20,
@@ -74,7 +74,7 @@ def cell_metrics_3():
 @pytest.fixture
 def qpd_to_qp():
     return {
-        "PredictionUE": 12345,
+        "PredictionUE": "12345",
         "UEMeasurements": {
             "ServingCellID": "310-680-200-555002",
             "MeasTimestampUEPDCPBytes": "2020-03-18 02:23:18.220",
