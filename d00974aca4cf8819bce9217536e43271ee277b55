@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ab6afbfb_e66b0021",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-04-01T12:43:01Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "6a715310_300c9ec5",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d8fab95_60218bb7",
         "filename": "qpdriver/data.py",
         "patchSetId": 3
@@ -69,6 +93,30 @@
       "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "648019ca_82dc3d16",
+        "filename": "qpdriver/data.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-04-01T12:43:01Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "343140e2_9eba5961",
+      "range": {
+        "startLine": 97,
+        "startChar": 23,
+        "endLine": 97,
+        "endChar": 38
+      },
+      "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     },
     {
       "key": {
