@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "343140e2_9eba5961",
+        "filename": "qpdriver/data.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-04-01T12:35:56Z",
+      "side": 1,
+      "message": "ok will do",
+      "parentUuid": "2d8fab95_60218bb7",
+      "range": {
+        "startLine": 97,
+        "startChar": 23,
+        "endLine": 97,
+        "endChar": 38
+      },
+      "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b1af18f_275e424b",
         "filename": "setup.py",
         "patchSetId": 3
@@ -59,6 +83,24 @@
       "writtenOn": "2020-04-01T12:28:45Z",
       "side": 1,
       "message": "How about pulling in overview.rst via the usual\n\ndef _long_descr():\n    \"\"\"Yields the content of documentation files for the long description\"\"\"\n    try:\n        doc_path \u003d path_join(SETUP_DIR, \"docs/source/index.rst\")\n        with open(doc_path) as f:\n            return f.read()\n    except FileNotFoundError:  # this happens during unit testing, we don\u0027t need it\n        return \"\"\n\n...\n\n    long_description\u003d_long_descr(),\n    long_description_content_type\u003d\"text/x-rst\",",
+      "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17562576_2cc15fb3",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-04-01T12:35:56Z",
+      "side": 1,
+      "message": "this is NOT a PYPI package and therefore it will not get a long description.",
+      "parentUuid": "5b1af18f_275e424b",
       "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
