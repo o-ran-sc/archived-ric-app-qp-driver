@@ -104,6 +104,24 @@
       "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ffde15f_4fc46879",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000074
+      },
+      "writtenOn": "2020-04-01T12:37:42Z",
+      "side": 1,
+      "message": "In fact this was explicitly removed in the prior commit to QPD/",
+      "parentUuid": "17562576_2cc15fb3",
+      "revId": "d00974aca4cf8819bce9217536e43271ee277b55",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": false
     }
   ]
 }
