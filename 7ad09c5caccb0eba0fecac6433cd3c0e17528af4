@@ -1,0 +1,8 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Guy Jacobson <gj2418@att.com>
+Code-Review+2: Tommy Carpenter <tc677g@att.com>
+Submitted-by: Tommy Carpenter <tc677g@att.com>
+Submitted-at: Mon, 06 Apr 2020 11:15:59 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-app/qp-driver/+/3139
+Project: ric-app/qp-driver
+Branch: refs/heads/master
