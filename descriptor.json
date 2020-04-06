@@ -1,0 +1,28 @@
+{
+    "xapp_name": "qp-driver",
+    "version": "1.0.1",
+    "containers": [
+        {
+            "name": "qp-driver",
+            "image": {
+                "registry": "nexus3.o-ran-sc.org:10002",
+                "name": "o-ran-sc/ric-app-qp-driver",
+                "tag": "1.0.1"
+            },
+            "ports": {
+                "rmr_data": 4562,
+                "rmr_route": 4561
+            },
+            "command": "start.py"
+        }
+    ],
+    "rmr": {
+        "protPort": "tcp:4562",
+        "txMessages": [
+            "TS_QOE_PRED_REQ"
+        ],
+        "rxMessages": [
+            "TS_UE_LIST"
+        ]
+    }
+}
