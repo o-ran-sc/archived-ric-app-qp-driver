@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "921fe190_5836df22",
+        "filename": "xapp-descriptor/config.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-05-15T15:56:40Z",
+      "side": 1,
+      "message": "what does this version string mean?  Why is it different from the tag on the docker image?",
+      "range": {
+        "startLine": 3,
+        "startChar": 20,
+        "endLine": 3,
+        "endChar": 28
+      },
+      "revId": "1831d5627873631f3a4184e075d9ccd3d315aa8d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
