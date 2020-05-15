@@ -1,0 +1,7 @@
+Code-Review+2: Scott Daniels <daniels@research.att.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Matti Hiltunen <hiltunen@att.com>
+Submitted-at: Fri, 15 May 2020 16:41:14 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-app/qp-driver/+/3706
+Project: ric-app/qp-driver
+Branch: refs/heads/master
