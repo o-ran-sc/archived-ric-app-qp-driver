@@ -11,6 +11,11 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`__
 and this project adheres to `Semantic Versioning <http://semver.org/>`__.
 
 
+[1.1.0] - 2020-06-11
+--------------------
+* Send alarm on SDL failure (`RICAPP-xxx <https://jira.o-ran-sc.org/browse/RICAPP-xxx>`_)
+* Requires xapp-frame-py at version 1.2.0 or later
+
 [1.0.9] - 2020-06-02
 --------------------
 * Change RMR listen port to 4560 (`RICAPP-112 <https://jira.o-ran-sc.org/browse/RICAPP-112>`_)
