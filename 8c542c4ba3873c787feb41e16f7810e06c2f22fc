@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f79402ac_9396d59a",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000263
+      },
+      "writtenOn": "2020-06-11T21:15:41Z",
+      "side": 1,
+      "message": "Comment mentions adding a -s flag, but I don\u0027t see that in the command that follows",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 109
+      },
+      "revId": "8c542c4ba3873c787feb41e16f7810e06c2f22fc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}
