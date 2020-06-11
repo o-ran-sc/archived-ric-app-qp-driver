@@ -33,9 +33,11 @@ mock_qp_xapp = None
 def test_init_xapp(monkeypatch, ue_metrics, cell_metrics_1, cell_metrics_2, cell_metrics_3, ue_metrics_with_bad_cell):
     # monkeypatch post_init to set the data we want in SDL
     # the metrics arguments are JSON (dict) objects
+
+    _original_post_init = main.post_init
+
     def fake_post_init(self):
-        self.def_hand_called = 0
-        self.traffic_steering_requests = 0
+        _original_post_init(self)
         self.sdl_set(data.UE_NS, "12345", json.dumps(ue_metrics).encode(), usemsgpack=False)
         self.sdl_set(data.UE_NS, "8675309", json.dumps(ue_metrics_with_bad_cell).encode(), usemsgpack=False)
         self.sdl_set(data.CELL_NS, "310-680-200-555001", json.dumps(cell_metrics_1).encode(), usemsgpack=False)
